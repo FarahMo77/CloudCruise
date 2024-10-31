@@ -1,10 +1,12 @@
-Flight Booking Website Project
-Project Overview:
+*Flight Booking Website Project* :airplane:
+
+*Project Overview:* :raised_hands:
+
 The Flight Booking Website is a dynamic platform designed to facilitate the booking of flights for both companies and passengers. This application allows users to manage their profiles, view available flights, and handle bookings efficiently. It features user-friendly interfaces for both companies (airlines) and passengers, providing essential functionalities for flight management and reservation.
 
-Key Features:
+*Key Features:* :eyes: 
 
-User Management:
+_User Management:_
 
 Company Profile: Companies can register and manage their flight offerings. User data includes company name, bio, address, contact details, logo, and financial information. Each company can manage their flights and view passenger interactions.
 Passenger Profile: Passengers can register with essential information, including name, email, password, contact number, passport details, and profile picture. They can track their flight history, including completed and pending flights.
