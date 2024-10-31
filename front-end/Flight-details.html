@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title>Flight Details</title>
+    <link rel="icon" type="image/x-icon" href="Imgs/company-logo.png">
+    <style>
+        * {
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            caret-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            /* Ensure the container takes up the full height of the viewport */
+            margin: 0;
+            padding: 0;
+            overflow: scroll;
+            font-family: "Raleway", sans-serif;
+            background-image: url("Imgs/flight-details-background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Your existing CSS styles */
+
+        .overlay {
+            width: 100%;
+            height: calc(100vh - 40px);
+            background-color: rgb(0 0 0 / 60%);
+
+        }
+
+
+        footer {
+            background-color: rgb(90 95 109 / 96%);
+            color: white;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px 0;
+            height: 40px;
+            /* Set a fixed height for the footer */
+            /* Push the footer to the bottom of the container */
+        }
+
+
+
+        header {
+            width: 100%;
+            color: white;
+            padding: 3px 0;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+
+        header h1 {
+            margin-left: 55px;
+            font-size: 17px;
+        }
+
+        header img {
+            width: 40px;
+            position: absolute;
+            left: 10px;
+            margin: 0;
+        }
+
+
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 70px auto;
+            width: fit-content;
+        }
+
+        .flight-card {
+            border-radius: 10px;
+            text-align: left;
+            background-color: #8995a7f0;
+            width:400px;
+            padding: 30px;
+            box-shadow: 5px 20px 50px #122633;
+        }
+
+        .flight-card h2 {
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 40px;
+            width: fit-content;
+            letter-spacing: 2px;
+            margin: 0 auto;
+            color: #ffffffeb;
+        }
+        .flight-card ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .flight-card li {
+            color: #ffffffeb;
+            padding: 5px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-style: italic;
+            letter-spacing: 2px;
+            margin: 5px 0;
+        }
+        span{
+            color: #122633;
+            display: inline-flex;
+            font-weight: 550;
+            font-size: 18.5px;
+            align-items: center;
+        }
+
+
+        .flight-card button {
+            text-transform: uppercase;
+            background-color: #826f6a;
+            color: #ffffffeb;
+            width: 180px;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            font-size: 17px;
+            margin: 0 22%;
+            cursor: pointer;
+            border: none;
+            font-weight: normal;
+            transition: 0.8s ease;
+        }
+
+        .flight-card button:hover {
+            background-color: #ba261b;
+            transform: scale(1.1);
+        }
+        .dialog {
+            background-color: #8995a7f0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #dialog-message {
+            color: #ba261b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <header>
+            <img src="Imgs/company-logo.png" alt="Company Logo">
+            <h1>CloudCruise</h1>
+        </header>
+
+        <main>
+            <div class="flight-card">
+                <h2>Flight Details</h2>
+                <div class="dialog" title="Flight Cancellation" style="display: none;">
+                    <p id="dialog-message"></p>
+                </div>
+                <ul>
+                    <span>Id : <li class="flight-details" id="flight-id">----</li></span>
+                    <span>Name : <li class="flight-details" id="flight-name">----</li></span>
+                    <span>Itinerary : <li class="flight-details" id="flight-itinerary">----</li></span>
+                    <span>Fees : <li class="flight-details" id="flight-fees">----</li></span>
+                    <span>Start : <li class="flight-details" id="flight-start">----</li></span>
+                    <span>End : <li class="flight-details" id="flight-end">----</li></span>
+                    <span>State : <li class="flight-details" id="flight-state">----</li></span>
+                    <span>Pending passengers : <li class="flight-details" id="pending-passengers">----</li></span>
+                    <span>Registered passengers : <li class="flight-details" id="registered-passengers">----</li></span>
+                </ul>
+                <button id="cancel-flight">Cancel Flight</button>
+            </div>
+        </main>
+    </div>
+    <footer>
+        © CloudCruise
+    </footer>
+
+    <script src="Flight-details.js"></script>
+</body>
+
+</html>

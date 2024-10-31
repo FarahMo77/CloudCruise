@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="Imgs/company-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <style>
+        * {
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+      *:not(input){
+        caret-color: transparent;
+      }
+        body {
+            /* Ensure the container takes up the full height of the viewport */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: "Raleway", sans-serif;
+            background-image: url("Imgs/add-flight-background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Your existing CSS styles */
+
+        .overlay {
+            width: 100%;
+            height: calc(100vh - 40px);
+            background-color: rgb(0 0 0 / 60%);
+
+        }
+
+
+        footer {
+            background-color: rgb(90 95 109 / 96%);
+            color: #ffffffeb;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px 0;
+            height: 40px;
+            /* Set a fixed height for the footer */
+            /* Push the footer to the bottom of the container */
+        }
+
+        header {
+            width: 100%;
+            gap: 80%;
+            color: #ffffffeb;
+            padding: 3px 0;
+            display: flex;
+            align-items: center;
+        }
+
+
+        header h1 {
+            margin-left: 55px;
+            font-size: 17px;
+        }
+
+        header img {
+            width: 40px;
+            position: absolute;
+            left: 10px;
+            margin: 0;
+        }
+
+        main{
+          width: 500px;
+          padding: 5px 0 0 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 0 auto;
+          background-color: #8995a7f0;
+          border-radius: 5px;
+        }
+        main h1{
+          margin:0 0 20px 0;
+          color: #ffffffeb;
+          font-size: 40px;
+          letter-spacing: 2px;
+          font-weight: normal;
+          text-transform: uppercase;
+          
+        }
+        form label{
+          font-weight: 550;
+          letter-spacing: normal;
+          font-size: 19px;
+          color: #122633;
+          
+        }
+        .inputbox{
+          width:400px;
+          padding: 6px 0;
+          margin-bottom: 6px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          
+        }
+        button{
+          margin: 15px 30.5% ;
+          font-size: 19px;
+          border-radius: 5px;
+          width: 155px;
+          color: #ffffffeb;
+          padding: 10px;
+          background-color: #43a1d6;
+          cursor: pointer;
+          transition: 0.8s ease;
+          border: none;
+          letter-spacing: 2px;
+          font-weight: normal;
+          text-transform: uppercase;
+        }
+        input{
+          caret-color: #122633;
+          padding: 5px;
+          font-size: 17px;
+          letter-spacing: 2px;
+          outline: none;
+          border: none;
+          font-weight: normal;
+          color:#122633;
+          background-color: #b5cad7f2;
+          border-radius: 5px;
+          width: 60%;
+          transition: 0.8s ease;
+        }
+        input:focus{
+          box-shadow: 0 0 5px #122633;
+        }
+        button:hover{
+          transform: scale(1.1);
+          background-color: #3b8ebf;
+        }
+        #message{
+          font-weight: bold;
+          text-align: center;
+          letter-spacing: 2px;
+        }
+        /* End */
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <header>
+            <img src="Imgs/company-logo.png" alt="Company Logo">
+            <h1>CloudCruise</h1>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <h1>Add flight</h1>
+            <form action="post" target="">
+              <div class="inputbox">
+                <label for="id">Id :</label>
+                <input type="text" id="id" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="name">Name :</label>
+                <input type="text" id="name" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="departure">Departure city :</label>
+                <input type="text" id="departure" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="arrival">Arrival city :</label>
+                <input type="text" id="arrival" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="passengers">Passengers :</label>
+                <input type="number" id="passengers" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="departure-date">Departure date :</label>
+                <input type="date" id="departure-date" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="departure-time">Departure time :</label>
+                <input type="text" id="departure-time" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="arrival-date">Arrival date :</label>
+                <input type="date" id="arrival-date" required="required">
+              </div>
+              <div class="inputbox">
+                <label for="arrival-time">Arrival time :</label>
+                <input type="text" id="arrival-time" required="required">
+              </div>
+              <div id="message"></div>
+              <button type="submit">Add flight</button>
+            </div>
+            </form>
+        </main>
+      </div>
+    <footer>
+        &copy;CloudCriuse
+    </footer>
+    <!-- End -->
+    <script src="Add-flight.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+DB Schema:
+
+
+company (id[primary key] , name , bio , address , location , username , password , email , telephone , logo_image[location on server] , account)
+
+flight (id [primary key] ,company_Id[FK], name , fees , status[completed or not])
+
+passengerXflight (id [PK], flight_id[FK] , passsenger_id[FK] , status[pending , registered , completed] )
+
+passenger (id[primary key] , name  , password , email , telephone , photo[location on server] , passport_img[location on server])
+
+flightXcity(id [PK], flight_id[FK] ,city_id[FK] , start_day_and_hour , end_day_and_hour)
+
+city(id [PK] , name , country)
+
+note: if a flight is completed , change all status of passengerXflight with flight ID to completed ,
+passenger booking steps -> flight registered -> pending  -> completed
